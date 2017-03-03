@@ -25,14 +25,12 @@ void cut_paste(SplayTree *T, int i, int j, int k) {
     T->split(i - 1, pasteSection);
     T->join(s1);
     SplayTree* s2 = new SplayTree();
-    if (k <= i)
-    {
+    if (k <= i) {
         T->split(k, s2);
         T->join(pasteSection);
         T->join(s2);
     }
-    else
-    {
+    else {
         int pasteLength = j - i + 1;
         T->split(k - pasteLength, s2);
         T->join(pasteSection);
